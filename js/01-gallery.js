@@ -34,14 +34,14 @@ function showModal(event) {
 
   instance.show();
 
-  function onEscKeydown(event) {
+  function closeModalEsc(event) {
     if (event.code !== "Escape") {
       return;
     }
     instance.close();
-    document.removeEventListener("keydown", onEscKeydown);
+    document.removeEventListener("keydown", closeModalEsc);
   }
-  document.addEventListener("keydown", onEscKeydown);
+  document.addEventListener("keydown", closeModalEsc);
 }
 
 galleryRef.addEventListener("click", showModal);
